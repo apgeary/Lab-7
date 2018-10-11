@@ -1,6 +1,15 @@
 
 import java.util.Stack;
 
+/**
+ * 
+ * @author Alexander Geary
+ * @version 10-11-2018
+ * 
+ * StackRestaurant creates a Restaurant with a ticket Stack to store 
+ * tickets. "Last in - First out"
+ *
+ */
 public class StackRestaurant extends Restaurant{
 
 	
@@ -13,14 +22,15 @@ public class StackRestaurant extends Restaurant{
 	 * */
 	public StackRestaurant()
 	{
-		
-		
 		tickets = new Stack<Ticket>();
 	}
 	
 	/**
 	 * Adds a ticket to the Stack and returns true if the 
 	 * ticket was added.
+	 * 
+	 * @param the ticket to be added
+	 * @return true if ticket was added/false otherwise
 	 */
 	public boolean addTicket(Ticket order)
 	{

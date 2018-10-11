@@ -2,30 +2,51 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
+
+/**
+ * 
+ * @author Alexander Geary
+ * @version 10-11-2018
+ * 
+ * QueueRestaurant creates a Restaurant with a ticket Queue used to 
+ * store tickets. "First in - First out"
+ *
+ */
 public class QueueRestaurant extends Restaurant{
 
 	
-	
+	/** represents the maximum allowed number of tickets in Queue*/
 	private int maxSize;
-	private int ticketAmount;
+	
+	/** Queue for the Restaurants tickets*/
 	private Queue<Ticket> tickets;
 
-	
+	/**
+	 * Constructor for Restaurant Queue
+	 * @param maxSize the maximum allowed tickets in Queue
+	 */
 	public QueueRestaurant(int maxSize)
 	{
 		
 		this.maxSize = maxSize;
-		ticketAmount = 0;
+	
 		tickets = new LinkedList<Ticket>();
 		
 	}
 	
+	/**
+	 * Adds the given ticket to the Queue
+	 * 
+	 * @param order, the ticket to add to the queue
+	 * @return true if ticket was added/false otherwise
+	 */
 	public boolean addTicket(Ticket order)
 	{
-		if (ticketAmount < maxSize)
+		// Ensure max size isn't reached already
+		if (tickets.size() < maxSize)
 		{
 			tickets.add(order);
-			ticketAmount = tickets.size();
+			
 			return true;
 		}
 		else 
@@ -34,12 +55,21 @@ public class QueueRestaurant extends Restaurant{
 		}
 	}
 	
+	/**
+	 * Checks to see the next ticket in the queue without removing
+	 * the ticket.
+	 * @return the next ticket in the Queue.
+	 */
 	protected Ticket checkNextCompletedTicket()
 	{
 		return tickets.peek();
 		
 	}
 	
+	/**
+	 * Completes the next Ticket in the Queue.
+	 * @return the ticket that was completed and removed from queue.
+	 */
 	protected Ticket completeTicket()
 	{
 		 
@@ -55,6 +85,10 @@ public class QueueRestaurant extends Restaurant{
 		}
 	}
 	
+	/**
+	 * Returns the remaining number of Tickets in the queue
+	 * @return the number of tickets remaining.s
+	 */
 	protected int numberRemainingTickets()
 	{
 		return tickets.size();

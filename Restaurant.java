@@ -1,5 +1,11 @@
 
-
+/**
+ * Class representing a Restaurant 
+ * 
+ * @author Alexander Geary
+ * @version 10-11-2018
+ *
+ */
 public abstract class Restaurant {
 
 
@@ -12,6 +18,11 @@ public abstract class Restaurant {
 		
 	protected abstract int numberRemainingTickets();
 	
+	/**
+	 * Method checks the current tickets and returns the amount of
+	 * tickets left along with the current ticket.
+	 * @return String for orders left
+	 */
 	public String getCurrentStatus()
 	{
 		String result;
@@ -27,6 +38,12 @@ public abstract class Restaurant {
 		return result;
 	}
 	
+	/**
+	 * Completes the next ticket and calculates the time taken to do so.
+	 * 
+	 * @param timeCompleted the time the ticket was completed
+	 * @return 
+	 */
 	public String completeTicket(int timeCompleted)
 	{
 		int totalTime = timeCompleted - checkNextCompletedTicket().getTimeOrdered();
