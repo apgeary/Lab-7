@@ -45,7 +45,14 @@ public class StackRestaurant extends Restaurant{
 	 */
 	protected Ticket completeTicket()
 	{
-		return tickets.pop();
+		if (tickets.peek() != null)
+		{
+			return tickets.pop();
+		}
+		else 
+		{
+			return null;
+		}
 	}
 	
 	/**

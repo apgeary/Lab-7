@@ -1,4 +1,3 @@
-import java.util.Calendar;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -6,7 +5,7 @@ import java.util.Queue;
 public class QueueRestaurant extends Restaurant{
 
 	
-	private int timeIn;
+	
 	private int maxSize;
 	private int ticketAmount;
 	private Queue<Ticket> tickets;
@@ -46,8 +45,13 @@ public class QueueRestaurant extends Restaurant{
 		 
 		if (tickets.peek() != null)
 		{
-			long timeDiff = tickets.getTimeOrdered() - tickets.peek().getTimeOrdered();
+			return tickets.remove();
 			
+		}
+		
+		else
+		{
+			return null;
 		}
 	}
 	

@@ -2,7 +2,7 @@
 
 public abstract class Restaurant {
 
-	
+
 	
 	public abstract boolean addTicket(Ticket order);
 		
@@ -29,7 +29,7 @@ public abstract class Restaurant {
 	
 	public String completeTicket(int timeCompleted)
 	{
-		int totalTime = getTimeOrdered() - timeCompleted;
+		int totalTime = timeCompleted - checkNextCompletedTicket().getTimeOrdered();
 		String result;
 		if (numberRemainingTickets() == 0)
 		{
@@ -37,7 +37,7 @@ public abstract class Restaurant {
 		}
 		else 
 		{
-			result = "It took " + 3 + " time units to complete the following "
+			result = "It took " + totalTime + " time units to complete the following "
 					+ "order: " + completeTicket().toString();
 		}
 		return result;
