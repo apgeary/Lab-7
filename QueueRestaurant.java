@@ -93,4 +93,6 @@ public class QueueRestaurant extends Restaurant{
 	{
 		return tickets.size();
 	}
+	
+	
 }

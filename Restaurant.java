@@ -41,13 +41,15 @@ public abstract class Restaurant {
 	/**
 	 * Completes the next ticket and calculates the time taken to do so.
 	 * 
-	 * @param timeCompleted the time the ticket was completed
+	 * @param timeCompleted the time taken to complete the ticket
 	 * @return 
 	 */
 	public String completeTicket(int timeCompleted)
 	{
+		// Calculate the total time taken to complete the ticket
 		int totalTime = timeCompleted - checkNextCompletedTicket().getTimeOrdered();
 		String result;
+		// Check that there are remaining tickets
 		if (numberRemainingTickets() == 0)
 		{
 			result = "No orders remain. Could not complete a Ticket.";
