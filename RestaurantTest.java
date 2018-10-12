@@ -2,12 +2,17 @@ import org.junit.Test;
 
 import junit.framework.Assert;
 
+
+// small changes
+
 /**
  * 
  * @author Alexander Geary
  * @version 10-11-2018
  * 
  * Tests the abstract class Restaurant
+ * 
+ *
  *
  */
 @SuppressWarnings("deprecation")

@@ -2,6 +2,14 @@ import org.junit.Test;
 
 import junit.framework.Assert;
 
+/**
+ * 
+ * @author Alexander Geary
+ * @version 10-11-2018
+ * 
+ * Tests the Ticket class.
+ *
+ */
 @SuppressWarnings("deprecation")
 public class TicketTest {
 
