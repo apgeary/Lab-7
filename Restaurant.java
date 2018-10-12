@@ -47,7 +47,7 @@ public abstract class Restaurant {
 	public String completeTicket(int timeCompleted)
 	{
 		// Calculate the total time taken to complete the ticket
-		int totalTime = timeCompleted - checkNextCompletedTicket().getTimeOrdered();
+		
 		String result;
 		// Check that there are remaining tickets
 		if (numberRemainingTickets() == 0)
@@ -56,6 +56,7 @@ public abstract class Restaurant {
 		}
 		else 
 		{
+			int totalTime = timeCompleted - checkNextCompletedTicket().getTimeOrdered();
 			result = "It took " + totalTime + " time units to complete the following "
 					+ "order: " + completeTicket().toString();
 		}
