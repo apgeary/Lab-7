@@ -49,42 +49,51 @@ public class StackRestaurantTest {
 		// Create a StackRestaurant and ticket to add
 		Restaurant resStack = new StackRestaurant();
 		Ticket ticket1 = new Ticket("Grilled cheese", 10);
-		
 		boolean expected = true;
 		
-		Assert.assertEquals(expected, resStack.addTicket(ticket1));
-		
-		
-		
-		
+		// Conduct test
+		Assert.assertEquals(expected, resStack.addTicket(ticket1));		
 	}
 	
+	/**
+	 * Tests the checkNestCompletedTicket method, with or without
+	 * a ticket available. "Last in - First out"
+	 */
 	@Test
 	public void testCheckNextCompletedTicket()
 	{
+		// Create StackRestaurant and add tickets
 		Restaurant resStack = new StackRestaurant();
-		
 		Ticket ticket1 = new Ticket("Grilled cheese", 10);
 		Ticket ticket2 = new Ticket("Spaghetti", 20);
+		
+		// Add tickets to StackRestaurant
 		resStack.addTicket(ticket1);
 		resStack.addTicket(ticket2);
 				
+		// Conduct tests
 		Assert.assertEquals(ticket2, resStack.checkNextCompletedTicket());
 		
 	}
 	
+	/**
+	 * Tests the completeTicket method, with or without 
+	 * a ticket available. "Last in - First out"
+	 */
 	@Test
 	public void testCompleteTicket()
 	{
+		// Create Restaurant and tickets
 		Restaurant resStack = new StackRestaurant();
-		
 		Ticket ticket1 = new Ticket("Grilled cheese", 10);
 		Ticket ticket2 = new Ticket("Spaghetti", 20);
 		Ticket expected = null;
 		
+		// Add tickets to StackRestaurant
 		resStack.addTicket(ticket1);
 		resStack.addTicket(ticket2);
 		
+		// Conduct tests
 		Assert.assertEquals(ticket2, resStack.completeTicket());
 		Assert.assertEquals(ticket1, resStack.completeTicket());
 		Assert.assertEquals(expected, resStack.completeTicket());

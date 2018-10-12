@@ -60,19 +60,20 @@ public class Ticket implements Comparable<Ticket>{
 	@Override
 	public int compareTo(Ticket other)
 	{
+		int result = 0;
 		if (getTimeOrdered() < other.getTimeOrdered())
 		{
-			return -1;
+			result = -1;
 		}
 		else if (getTimeOrdered() > other.getTimeOrdered())
 		{
-			return 1;
+			result = 1;
 		}
 		else if (getTimeOrdered() == other.getTimeOrdered())
 		{
-			return 0;
+			result = 0;
 		}
-		return 0;
+		return result;
 	}
 
 }
