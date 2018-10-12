@@ -65,7 +65,7 @@ public class RestaurantTest {
 		Assert.assertEquals(expected, myRestaurant.completeTicket(20));
 		expected = "It took 5 time units to complete the following order: Chicken sandwich";
 		Assert.assertEquals(expected, myRestaurant.completeTicket(20));
-		expected = "No orders remain. Could not complete a Ticket.";
+		expected = "No orders remain. Could not complete an Ticket.";
 		Assert.assertEquals(expected, myRestaurant.completeTicket(20));
 		
 		

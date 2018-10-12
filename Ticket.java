@@ -69,10 +69,7 @@ public class Ticket implements Comparable<Ticket>{
 		{
 			result = 1;
 		}
-		else if (getTimeOrdered() == other.getTimeOrdered())
-		{
-			result = 0;
-		}
+		
 		return result;
 	}
 

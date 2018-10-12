@@ -52,7 +52,7 @@ public abstract class Restaurant {
 		// Check that there are remaining tickets
 		if (numberRemainingTickets() == 0)
 		{
-			result = "No orders remain. Could not complete a Ticket.";
+			result = "No orders remain. Could not complete an Ticket.";
 		}
 		else 
 		{
